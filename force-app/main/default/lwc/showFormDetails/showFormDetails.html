@@ -1,0 +1,40 @@
+<template>
+    <lightning-card class="" title="Form Details">
+        <template if:true={formDataList}>
+            <table
+                aria-describedby="conatact-list"
+                class="slds-table slds-table_bordered"
+            >
+                <!--Header of the table-->
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="slds-size_1-of-2" scope="col">
+                            <div class="slds-truncate" title="Name">Name</div>
+                        </th>
+
+                        <th class="slds-size_1-of-2" scope="col">
+                            <div class="slds-truncate" title="Email">Email</div>
+                        </th>
+                    </tr>
+                </thead>
+                <!--Body of the table-->
+                <tbody>
+                    <template
+                        for:each={formDataList}
+                        for:item="item"
+                        for:index="indexVar"
+                    >
+                        <tr key={item.name} class="slds-hint-parent">
+                            <td class="slds-size_1-of-6">
+                                <div>{item.name}</div>
+                            </td>
+                            <td class="slds-size_1-of-6">
+                                <div>{item.email}</div>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+    </lightning-card>
+</template>

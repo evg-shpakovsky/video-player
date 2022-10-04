@@ -1,0 +1,21 @@
+<template>
+    <template if:true={isVideoUrl}>
+        <template for:each={formDataList} for:item="item" for:index="indexVar">
+            <video
+                key={item.videoUrl}
+                style="height: 50%; width: 100%"
+                controls
+                autoplay
+            >
+                <h2>Your videos.</h2>
+                <source src={item.videoUrl} type="video/mp4" />
+            </video>
+        </template>
+    </template>
+    <template if:false={isVideoUrl}>
+        <video style="height: 50%; width: 100%" controls autoplay>
+            <h2>Your videos.</h2>
+            <source src={mediaFile.url} type="video/mp4" />
+        </video>
+    </template>
+</template>

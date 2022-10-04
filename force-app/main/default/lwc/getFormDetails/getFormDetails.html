@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Form Submit">
+        <p class="slds-var-p-around_small">
+            <lightning-input
+                type="text"
+                label="Name"
+                value={name}
+                onchange={handleNameInputChange}
+            ></lightning-input>
+
+            <lightning-input
+                type="email"
+                label="Email"
+                value={Email}
+                onchange={handleEmailInputChange}
+            ></lightning-input>
+        </p>
+        <lightning-button
+            class="slds-align_absolute-center"
+            label="Submit"
+            onclick={submitForm}
+        >
+        </lightning-button>
+    </lightning-card>
+</template>
